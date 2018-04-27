@@ -1,37 +1,37 @@
-var isMomHappy = true;
+const isMomHappy = true;
 
 // promise 1
-var willIGetNewPhone = new Promise(function(resolve, reject){
+const willIGetNewPhone = new Promise((resolve, reject) => {
   if (isMomHappy) {
-    var phone = {
+    const phone = {
       brand: 'iPhone X',
       color: 'Black'
     };
     console.log("resolving willIGetNewPhone promise");
     resolve(phone); // fullfilled
   } else {
-    var reason = new Error('Mom is not happy');
+    const reason = new Error('Mom is not happy');
     console.log("rejecting willIGetNewPhone promise")
     reject(reason);
   }
 });
 
 // promise 2
-var showOff = function(phone) {
+const showOff = function(phone) {
   return new Promise(function(resolve, reject) {
-    var message = 'Hey, I have a new ' + phone.color + ' ' + phone.brand + ' phone.';
+    const message = 'Hey, I have a new ' + phone.color + ' ' + phone.brand + ' phone.';
     resolve(message);
   });
 };
 
-var askMom = function(){
+const askMom = function(){
   console.log("before asking mom");
   willIGetNewPhone
     .then(showOff)
-    .then(function(fullfilled){
+    .then((fullfilled) => {
       console.log("success", fullfilled);
     })
-    .catch(function(error){
+    .catch((error) => {
       console.log("error", error.message);
     });
   console.log("after asking mom");
