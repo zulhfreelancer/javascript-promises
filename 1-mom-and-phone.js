@@ -25,6 +25,7 @@ var showOff = function(phone) {
 };
 
 var askMom = function(){
+  console.log("before asking mom");
   willIGetNewPhone
     .then(showOff)
     .then(function(fullfilled){
@@ -33,6 +34,7 @@ var askMom = function(){
     .catch(function(error){
       console.log("error", error.message);
     });
+  console.log("after asking mom");
 };
 
 askMom();
