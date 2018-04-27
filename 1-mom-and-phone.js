@@ -24,6 +24,8 @@ const showOff = function(phone) {
   });
 };
 
+// ES6 way
+/*
 const askMom = function(){
   console.log("before asking mom");
   willIGetNewPhone
@@ -38,3 +40,21 @@ const askMom = function(){
 };
 
 askMom();
+*/
+
+// ES7 way
+async function askMom() {
+  try {
+    console.log('[ES7] before asking mom');
+    let phone   = await willIGetNewPhone;
+    let message = await showOff(phone);
+    console.log(message);
+    console.log('[ES7] after asking mom');
+  } catch(error) {
+    console.log(error.message);
+  }
+}
+
+(async () => {
+  await askMom();
+})();
