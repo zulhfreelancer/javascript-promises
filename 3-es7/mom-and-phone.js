@@ -24,24 +24,6 @@ const showOff = function(phone) {
   });
 };
 
-// ES6 way
-/*
-const askMom = function(){
-  console.log("before asking mom");
-  willIGetNewPhone
-    .then(showOff)
-    .then((fullfilled) => {
-      console.log("success", fullfilled);
-    })
-    .catch((error) => {
-      console.log("error", error.message);
-    });
-  console.log("after asking mom");
-};
-
-askMom();
-*/
-
 // ES7 way
 async function askMom() {
   try {
